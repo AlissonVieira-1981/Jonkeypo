@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jockey Pow</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <img src="./garoto.jonkeypo.avif" class="img-garoto" alt="img-garoto">
+
+    <div class="sets">
+        <h2 class="configh2">Felipe</h2>
+        <p class="small-box1"></p>
+        <p class="small-box2"></p>
+        <p class="small-box3"></p>
+    </div>
+
+    <div class="container">
+
+        <h1>Jockey Pow</h1>
+        <div class="buttons">
+            <button id="rock" onclick="PlayHuman('rock')">&#x1F44A;</button>
+            <button id="paper" onclick="PlayHuman('paper')"> &#x1F590; </button>
+            <button id="scissors" onclick="PlayHuman('scissors')">&#x270C; </button>
+        </div>
+
+        <p class="result"></p>
+
+        <p class="your-score">Sua Pontuação: <span id="human-score">0</span></p>
+        <p class="machine-score">Pontuação da Alexia: <span id="machine-score">0</span></p>
+
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    </div>
+
+
+    <div class="sets-computer">
+        <h2 class="configh2">Computer</h2>
+        <p class="small-box-comp1"></p>
+        <p class="small-box-comp2"></p>
+        <p class="small-box-comp3"></p>
+    </div>
+    
+    <img alt="img-robo" src="./robo.jonkeypo.avif" class="img-robo">
+    
+
+
+
+</body>
+
+
+<script src="./script.js"></script>
+
+
+</html>
