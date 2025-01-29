@@ -21,6 +21,9 @@
         <li>O primeiro a vencer duas rodadas ganha a partida.</li>
        <li>Confetes animados são lançados quando o jogo termina.</li>
     </ul>
+    <img src"./https://github.com/user-attachments/assets/29a1f6cb-50c1-43df-96cb-b22949df7f55)>
+
+    
 
 
     
