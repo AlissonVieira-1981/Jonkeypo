@@ -22,12 +22,17 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    height: 550px;
+    width: 400px;
+    margin-top: 120px;
+}
+h1{
+    font-size: 50px;
 }
 
 button {
     padding: 12px;
-    font-size: 32px;
+    font-size: 78px;
     margin-top: 10px;
     cursor: pointer;
     border: none;
@@ -64,12 +69,13 @@ button:hover {
 p {
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: 30px;
 
 }
 
 .your-score span {
 
-    color: red;
+    color: red;   
 
 }
 
@@ -77,86 +83,94 @@ p {
     color: blue
 }
 
+
 input {
-    width: 20px;
+    width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .configh2 {
-    font-size: 14px;
+    font-size: 34px;
     background-color: greenyellow;
     margin-bottom: 320px;
     border-radius: 15px;
     border-style: hidden;
     border-color: rgb(216, 29, 29);
-    padding-inline: 8px;
-    margin-top: 5px;
+    padding-inline: 18px;
+    margin-top: 23px;
+
 }
 
 .small-box1,
 .small-box2,
 .small-box3 {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     background-color: rgb(85, 85, 97);
-    border-radius: 12px;
+    border-radius: 18px;
+    border: none;
     display: inline-block;
-    margin-bottom: 300px;
-    padding: 1px;
+    margin-bottom: 290px;
+    padding: 5px;
     margin-right: 1px;
-    font-size: 18px;
+    font-size: 48px;
     color: rgb(124, 221, 14);
     text-align: center;
-    gap: 1px;
+
 
 }
 
 .sets {
     display: flex;
+    align-items: center;
     gap: 3px;
-    margin-top: 10px;
     position: fixed;
-    margin-right: 440px;
-    margin-top: 20px;
+    margin-right: 840px;
     margin-left: 5px;
+    margin-bottom: 300px;
+    margin-top: 50px;
+    gap: 10px;
+
 
 
 }
 
 .sets-computer {
     display: flex;
+    align-items: center;
     gap: 3px;
-    margin-top: 10px;
     position: fixed;
-    margin-left: 430px;
-    margin-top: 20px;
+    margin-left: 780px;
+    margin-top: 50px;
+    margin-bottom: 300px;
+    gap: 10px;
+
 }
 
 .small-box-comp1,
 .small-box-comp2,
 .small-box-comp3 {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     background-color: rgb(85, 85, 97);
-    border-radius: 12px;
+    border-radius: 18px;
+    border: none;
     display: inline-block;
-    margin-bottom: 300px;
-    padding: 1px;
-    margin-right: 1px;
-    font-size: 18px;
+    margin-bottom: 290px;
+    padding: 5px;
+    font-size: 48px;
     color: rgb(124, 221, 14);
     text-align: center;
-    gap: 1px;
 }
 
 .img-garoto {
     position: fixed;
-    height: 120px;
-    width: 120px;
-    margin-right: 430px;
-    margin-bottom: 100px;
+    height: 260px;
+    width: 260px;
+    margin-top: 80px;
+    margin-left: 80px;
     border-style: groove;
     border-radius: 12px;
 
@@ -164,64 +178,10 @@ input {
 
 .img-robo {
     position: fixed;
-    height: 120px;
-    width: 120px;
-    margin-left: 430px;
-    margin-bottom: 100px;
+    height: 260px;
+    width: 260px;
+    margin-top: 80px;
+   margin-left: 120px;
     border-style: groove;
     border-radius: 12px;
-}
-
-@media only screen and (max-width: 414px) {
-    .container {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .trophy-img {
-        width: 50px;
-        height: auto;
-    }
-
-    .small-box1,
-    .small-box2,
-    .small-box3,
-    .small-box-comp1,
-    .small-box-comp2,
-    .small-box-comp3 {
-        font-size: 16px;
-    }
-
-    .img-garoto,
-    .img-robo {
-        width: 100px;
-        height: 100px;
-        right: auto;
-        left: auto;
-        margin: 0 auto;
-    }
-
-    .sets {
-        top: 40px;
-        left: auto;
-        right: auto;
-        margin: 0 auto;
-    }
-
-    .sets-computer {
-        top: 80px;
-        left: auto;
-        right: auto;
-        margin: 0 auto;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }
