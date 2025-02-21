@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    
 
 }
 
@@ -20,13 +21,15 @@ body {
     border-radius: 12px;
     display: flex;
     flex-direction: column;
+    position: fixed;
     align-items: center;
     justify-content: center;
-    height: 550px;
+    height: 590px;
     width: 400px;
-    margin-top: 120px;
+    margin-top: 80px;
 }
-h1{
+
+h1 {
     font-size: 50px;
 }
 
@@ -75,7 +78,7 @@ p {
 
 .your-score span {
 
-    color: red;   
+    color: red;
 
 }
 
@@ -91,97 +94,181 @@ input {
     align-items: center;
 }
 
-.configh2 {
-    font-size: 34px;
-    background-color: greenyellow;
-    margin-bottom: 320px;
-    border-radius: 15px;
-    border-style: hidden;
-    border-color: rgb(216, 29, 29);
-    padding-inline: 18px;
-    margin-top: 23px;
-
-}
-
 .small-box1,
 .small-box2,
 .small-box3 {
-    width: 80px;
-    height: 80px;
-    background-color: rgb(85, 85, 97);
-    border-radius: 18px;
-    border: none;
-    display: inline-block;
-    margin-bottom: 290px;
-    padding: 5px;
-    margin-right: 1px;
-    font-size: 48px;
-    color: rgb(124, 221, 14);
     text-align: center;
-
-
-}
+    background-color: rgb(85, 85, 97);
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    font-size: 65px;
+    color: rgb(12, 12, 12);
+    margin-right: 5px;
+    }
 
 .sets {
+    margin-right: 830px;
     display: flex;
-    align-items: center;
-    gap: 3px;
-    position: fixed;
-    margin-right: 840px;
-    margin-left: 5px;
-    margin-bottom: 300px;
-    margin-top: 50px;
-    gap: 10px;
-
-
+    justify-content: center;
+    margin-bottom: 550px;
+    position: fixed;   
 
 }
 
-.sets-computer {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    position: fixed;
-    margin-left: 780px;
-    margin-top: 50px;
-    margin-bottom: 300px;
-    gap: 10px;
-
-}
-
-.small-box-comp1,
-.small-box-comp2,
-.small-box-comp3 {
-    width: 80px;
-    height: 80px;
-    background-color: rgb(85, 85, 97);
-    border-radius: 18px;
-    border: none;
-    display: inline-block;
-    margin-bottom: 290px;
-    padding: 5px;
-    font-size: 48px;
-    color: rgb(124, 221, 14);
+.configboy {
+    background-color: rgba(77, 228, 17, 0.836);
+    font-size: 30px;
+    height: max-content;
+    width: 140px;
+    border-radius: 12px;
+    margin-top: 120px;
     text-align: center;
+    position: fixed;
+    align-items: center;
+        
 }
 
 .img-garoto {
     position: fixed;
-    height: 260px;
-    width: 260px;
-    margin-top: 80px;
-    margin-left: 80px;
+    height: 330px;
+    width: 330px;
+    margin-top: 170px;
     border-style: groove;
     border-radius: 12px;
 
 }
 
-.img-robo {
+.configh2 {
+    background-color: rgba(77, 228, 17, 0.836);
+    font-size: 30px;
+    height: max-content;
+    width: 140px;
+    border-radius: 12px;
+    margin-top: 120px;
+    text-align: center;
     position: fixed;
-    height: 260px;
-    width: 260px;
-    margin-top: 80px;
-   margin-left: 120px;
+    align-items: center;
+}
+
+
+.small-box-comp1,
+.small-box-comp2,
+.small-box-comp3 {
+    text-align: center;
+    background-color: rgb(85, 85, 97);
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    font-size: 65px;
+    color: rgb(12, 12, 12);
+    margin-right: 5px;
+}
+
+.img-robo {
+    height: 330px;
+    width: 330px;
+    margin-top: 170px;
+    position: fixed;
     border-style: groove;
     border-radius: 12px;
+}
+
+.sets-computer {
+    margin-left: 830px;
+    display: flex;
+    justify-content: center;   
+    margin-bottom: 550px;
+    position: fixed;
+    
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .container {
+        
+        margin-top: 350px;
+        height: 500px;
+        width: 390px;
+    }
+
+    .sets-computer {
+        margin-bottom: 800px;
+        margin-right: 620px;
+    }
+
+    .img-robo {
+        height: 190px;
+        width: 190px;
+        margin-top: 140px;
+        position: fixed;
+
+    }
+
+    .small-box-comp1,
+    .small-box-comp2,
+    .small-box-comp3 {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        margin-top: 20px;
+        border-radius: 20px;
+        margin-right: 3px;
+        justify-content: center;    
+       
+    }
+
+    .configh2 {
+        margin-top: 95px;
+  
+   
+    }
+
+    .sets {
+        margin-left: 610px;
+        margin-bottom: 800px;
+        align-items: center;
+    }
+
+    .img-garoto {
+        height: 185px;
+        width: 185px;
+        margin-top: 380px;
+        position: fixed;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .small-box1,
+    .small-box2,
+    .small-box3 {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        margin-top: 20px;
+        border-radius: 20px;
+        margin-right: 3px;
+        justify-content: center;                  
+        
+    }
+
+    .configboy {
+        margin-top: 140px;
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

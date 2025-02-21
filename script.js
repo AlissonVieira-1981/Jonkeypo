@@ -17,8 +17,8 @@ let RoundCounter = 1;
 
 const shootConfetti = () => {
     confetti({
-        particleCount: 200,
-        spread: 90,
+        particleCount: 100,
+        spread: 70,
         origin: { y: 0.6 }
     });
 };
@@ -74,15 +74,21 @@ const PlayTheGame = (human, machine) => {
     if (CounterMyPoints >= 2) {
         document.querySelector(`.small-box${RoundCounter}`).innerHTML = '🏆';
         document.querySelector(`.small-box-comp${RoundCounter}`).innerHTML = '😠';
-        RoundCounter++;
-        resetRound();
+        setTimeout(() => {
+            RoundCounter++;
+            resetRound();
+        }, 2000); // Pausar por 2 segundos antes de reiniciar o jogo
+        return;
     }
 
     if (CounterMachinePoints >= 2) {
         document.querySelector(`.small-box-comp${RoundCounter}`).innerHTML = '🏆';
         document.querySelector(`.small-box${RoundCounter}`).innerHTML = '😠';
-        RoundCounter++;
-        resetRound();
+        setTimeout(() => {
+            RoundCounter++;
+            resetRound();
+        }, 2000); // Pausar por 2 segundos antes de reiniciar o jogo
+        return;
     }
 
     if (RoundCounter > 3) {
@@ -91,6 +97,10 @@ const PlayTheGame = (human, machine) => {
         setTimeout(resetGame, 4000); // Reseta o jogo após 4 segundos
     }
 };
+
+
+
+
 
 
 
