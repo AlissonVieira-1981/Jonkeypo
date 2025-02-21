@@ -195,11 +195,11 @@ input {
              
         margin-top: 280px;
         height: 420px;
-        width: 300px;
+        width: 334px;
       }
     
 button{
-padding: 1px;
+padding: 8px;
 font-size: 68px;
 }
 
@@ -207,9 +207,16 @@ font-size: 68px;
     margin-left: 20px;
 }
 
+p{
+    font-size: 28px;
+}
+
+h1{
+    font-size: 40px;
+}
     .sets-computer {
         margin-bottom: 650px;
-        margin-right: 650px;
+        margin-right: 638px;
     }
 
     .img-robo {
@@ -233,12 +240,14 @@ font-size: 68px;
     }
 
     .configh2 {
-        margin-top: 95px; 
+        margin-top: 95px;
+        font-size:25px ; 
+        width: 120px;
    
     }
 
     .sets {
-        margin-left: 650px;
+        margin-left: 638px;
         margin-bottom: 650px;
         align-items: center;
     }
@@ -266,6 +275,8 @@ font-size: 68px;
 
     .configboy {
         margin-top: 130px;
+        font-size:25px ; 
+        width: 120px;
 
     }
 
