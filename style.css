@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     position: fixed;
     align-items: center;
     justify-content: center;
-    height: 590px;
+    height: 490px;
     width: 400px;
     margin-top: 80px;
 }
@@ -189,68 +190,74 @@ input {
 
 
 
-@media screen and (max-width: 800px) {
-    .container {
-        
-        margin-top: 350px;
-        height: 500px;
-        width: 390px;
-    }
+@media screen and (max-width: 830px) {
+    .container {   
+             
+        margin-top: 280px;
+        height: 420px;
+        width: 300px;
+      }
+    
+button{
+padding: 1px;
+font-size: 68px;
+}
+
+.machine-score{
+    margin-left: 20px;
+}
 
     .sets-computer {
-        margin-bottom: 800px;
-        margin-right: 620px;
+        margin-bottom: 650px;
+        margin-right: 650px;
     }
 
     .img-robo {
-        height: 190px;
-        width: 190px;
-        margin-top: 140px;
+        height: 153px;
+        width: 153px;
+        margin-top: 137px;
         position: fixed;
-
-    }
+        }
 
     .small-box-comp1,
     .small-box-comp2,
     .small-box-comp3 {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
         font-size: 30px;
-        margin-top: 20px;
+        margin-top: 30px;
         border-radius: 20px;
         margin-right: 3px;
-        justify-content: center;    
+        justify-content: center;     
        
     }
 
     .configh2 {
-        margin-top: 95px;
-  
+        margin-top: 95px; 
    
     }
 
     .sets {
-        margin-left: 610px;
-        margin-bottom: 800px;
+        margin-left: 650px;
+        margin-bottom: 650px;
         align-items: center;
     }
 
     .img-garoto {
-        height: 185px;
-        width: 185px;
-        margin-top: 380px;
+        height: 150px;
+        width: 150px;
+        margin-top: 330px;
         position: fixed;
-        margin-right: 30px;
-        margin-left: 30px;
+       
     }
 
     .small-box1,
     .small-box2,
     .small-box3 {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
         font-size: 30px;
-        margin-top: 20px;
+        margin-top: 32px;
         border-radius: 20px;
         margin-right: 3px;
         justify-content: center;                  
@@ -258,7 +265,8 @@ input {
     }
 
     .configboy {
-        margin-top: 140px;
+        margin-top: 130px;
+
     }
 
 

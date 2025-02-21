@@ -61,7 +61,7 @@ const PlayTheGame = (human, machine) => {
 
     if (human === machine) {
         Result.innerHTML = "Empatou";
-    } else if (human === 'rock' && machine === 'scissors' || human === 'paper' && machine === 'rock' || human === 'scissors' && machine === 'paper') {
+    } else if (human === 'rock' && machine === 'scissors' || human == 'paper' && machine == 'rock' || human == 'scissors' && machine == 'paper') {
         Result.innerHTML = "Você Venceu";
         CounterMyPoints++;
         MyPoints.innerHTML = CounterMyPoints;
@@ -71,9 +71,12 @@ const PlayTheGame = (human, machine) => {
         MachinePoints.innerHTML = CounterMachinePoints;
     }
 
-    if (CounterMyPoints >= 2) {
+    if (CounterMyPoints === 3) {
         document.querySelector(`.small-box${RoundCounter}`).innerHTML = '🏆';
         document.querySelector(`.small-box-comp${RoundCounter}`).innerHTML = '😠';
+        if (RoundCounter >= 3) {
+            shootConfetti(); // Adiciona a chuva de confete quando a última rodada termina
+        }
         setTimeout(() => {
             RoundCounter++;
             resetRound();
@@ -81,9 +84,12 @@ const PlayTheGame = (human, machine) => {
         return;
     }
 
-    if (CounterMachinePoints >= 2) {
+    if (CounterMachinePoints === 3) {
         document.querySelector(`.small-box-comp${RoundCounter}`).innerHTML = '🏆';
         document.querySelector(`.small-box${RoundCounter}`).innerHTML = '😠';
+        if (RoundCounter >= 3) {
+            shootConfetti(); // Adiciona a chuva de confete quando a última rodada termina
+        }
         setTimeout(() => {
             RoundCounter++;
             resetRound();
@@ -94,9 +100,12 @@ const PlayTheGame = (human, machine) => {
     if (RoundCounter > 3) {
         Result.innerHTML = "Fim do jogo!";
         shootConfetti();
-        setTimeout(resetGame, 4000); // Reseta o jogo após 4 segundos
+        setTimeout(() => {
+            resetGame();
+        }, 4000); // Reseta o jogo após 4 segundos
     }
 };
+
 
 
 
