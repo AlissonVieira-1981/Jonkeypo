@@ -14,6 +14,9 @@ const setPlayer3 = document.querySelector(".small-box3");
 let CounterMyPoints = 0;
 let CounterMachinePoints = 0;
 let RoundCounter = 1;
+let PlayerSets = 0;
+let ComputerSets = 0;
+let gamePaused = false;
 
 const shootConfetti = () => {
     confetti({
@@ -23,21 +26,37 @@ const shootConfetti = () => {
     });
 };
 
+const blinkName = (element) => {
+    let count = 0;
+    const interval = setInterval(() => {
+        element.style.visibility = (element.style.visibility === 'hidden' ? '' : 'hidden');
+        count++;
+        if (count >= 6) {
+            clearInterval(interval);
+            element.style.visibility = ''; // Certifica-se de que o elemento fique visível no final
+        }
+    }, 300);
+};
+
 const PlayHuman = (humanChoice) => {
-    PlayTheGame(humanChoice, PlayMachine());
-}
+    if (!gamePaused) {
+        PlayTheGame(humanChoice, PlayMachine());
+    }
+};
 
 const PlayMachine = () => {
     const choices = ['rock', 'paper', 'scissors'];
     const randomNumber = Math.floor(Math.random() * 3);
-    console.log(randomNumber);
     return choices[randomNumber];
-}
+};
 
 const resetGame = () => {
     CounterMyPoints = 0;
     CounterMachinePoints = 0;
     RoundCounter = 1;
+    PlayerSets = 0;
+    ComputerSets = 0;
+    gamePaused = false;
     MyPoints.innerHTML = CounterMyPoints;
     MachinePoints.innerHTML = CounterMachinePoints;
     setPlayer1.innerHTML = '';
@@ -47,6 +66,8 @@ const resetGame = () => {
     setPlayer3.innerHTML = '';
     setComp3.innerHTML = '';
     Result.innerHTML = '';
+    document.querySelector('#Felipe').style.visibility = ''; // Certifica-se de que o elemento fique visível no reinício
+    document.querySelector('#Computer').style.visibility = ''; // Certifica-se de que o elemento fique visível no reinício
 };
 
 const resetRound = () => {
@@ -54,19 +75,36 @@ const resetRound = () => {
     CounterMachinePoints = 0;
     MyPoints.innerHTML = CounterMyPoints;
     MachinePoints.innerHTML = CounterMachinePoints;
+    gamePaused = false;
+};
+
+const checkWinner = () => {
+    if (PlayerSets === 2) {
+        Result.innerHTML = "Você venceu o jogo!";
+        shootConfetti();
+        setTimeout(() => {
+            resetGame();
+        }, 3000);
+    } else if (ComputerSets === 2) {
+        Result.innerHTML = "Você perdeu o jogo!";
+        shootConfetti();
+        setTimeout(() => {
+            resetGame();
+        }, 3000);
+    }
 };
 
 const PlayTheGame = (human, machine) => {
-    console.log('Humano: ' + human + " Maquina: " + machine);
-
     if (human === machine) {
         Result.innerHTML = "Empatou";
     } else if (human === 'rock' && machine === 'scissors' || human == 'paper' && machine == 'rock' || human == 'scissors' && machine == 'paper') {
         Result.innerHTML = "Você Venceu";
+        blinkName(document.querySelector('#Felipe'));
         CounterMyPoints++;
         MyPoints.innerHTML = CounterMyPoints;
     } else {
         Result.innerHTML = "Você Perdeu";
+        blinkName(document.querySelector('#Computer'));
         CounterMachinePoints++;
         MachinePoints.innerHTML = CounterMachinePoints;
     }
@@ -74,26 +112,38 @@ const PlayTheGame = (human, machine) => {
     if (CounterMyPoints === 3) {
         document.querySelector(`.small-box${RoundCounter}`).innerHTML = '🏆';
         document.querySelector(`.small-box-comp${RoundCounter}`).innerHTML = '😠';
-        if (RoundCounter >= 3) {
-            shootConfetti(); // Adiciona a chuva de confete quando a última rodada termina
+        PlayerSets++;
+        gamePaused = true;
+        if (RoundCounter === 3) {
+            shootConfetti();
         }
+        RoundCounter++;
         setTimeout(() => {
-            RoundCounter++;
-            resetRound();
-        }, 2000); // Pausar por 2 segundos antes de reiniciar o jogo
+            if (RoundCounter > 3) {
+                checkWinner();
+            } else {
+                resetRound();
+            }
+        }, 2000);
         return;
     }
 
     if (CounterMachinePoints === 3) {
         document.querySelector(`.small-box-comp${RoundCounter}`).innerHTML = '🏆';
         document.querySelector(`.small-box${RoundCounter}`).innerHTML = '😠';
-        if (RoundCounter >= 3) {
-            shootConfetti(); // Adiciona a chuva de confete quando a última rodada termina
+        ComputerSets++;
+        gamePaused = true;
+        if (RoundCounter === 3) {
+            shootConfetti();
         }
+        RoundCounter++;
         setTimeout(() => {
-            RoundCounter++;
-            resetRound();
-        }, 2000); // Pausar por 2 segundos antes de reiniciar o jogo
+            if (RoundCounter > 3) {
+                checkWinner();
+            } else {
+                resetRound();
+            }
+        }, 2000);
         return;
     }
 
@@ -102,9 +152,12 @@ const PlayTheGame = (human, machine) => {
         shootConfetti();
         setTimeout(() => {
             resetGame();
-        }, 4000); // Reseta o jogo após 4 segundos
+        }, 3000);
     }
 };
+
+
+
 
 
 
